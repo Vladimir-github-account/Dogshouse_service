@@ -16,12 +16,16 @@ const Dog = sequelize.define('Dog', {
 	tail_length: {
 		type: DataTypes.STRING,
 		allowNull: false,
-		min: 1,
+		validate: {
+			min: 1,
+		}
 	},
 	weight: {
 		type: DataTypes.STRING,
 		allowNull: false,
-		min: 1,
+		validate: {
+			min: 1,
+		}
 	},
 }, {
 	timestamps: true
