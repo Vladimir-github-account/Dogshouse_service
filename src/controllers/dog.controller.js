@@ -13,9 +13,6 @@ export const createDog = async (req, res) => {
 		if (!(name && color && tail_length && tail_length)) {
 			return res.status(400).json({ error: 'All input is required' });
 		}
-		if (Number(tail_length) <= 0 || Number(weight) <= 0) {
-			return res.status(400).json({ error: 'Only positive values allowed' });
-		}
 		const oldDog = await Dog.findOne({ where: { name } });
 		if (oldDog !== null) {
 			return res.status(404).json({ error: 'Dog with this name already exist' });

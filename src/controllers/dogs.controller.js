@@ -10,9 +10,9 @@ export const getDogList = async (req, res) => {
 			order
 		}
 	} = req;
-	const offset = pageNumber * pageSize;
-	const queryOrder = attribute && order ? [[attribute, order]] : [['id', 'ASC']];
 	try {
+		const offset = pageNumber * pageSize;
+		const queryOrder = attribute && order ? [[attribute, order]] : [['id', 'ASC']];
 		const dogList = await Dog.findAll({
 			limit: Number(limit) || Number(pageSize) || 10,
 			offset: Number(offset) || 0,

@@ -4,3 +4,5 @@ export const CORS_OPTIONS = {
 	credentials: true,
 	maxAge: 3600
 };
+
+export const POSITIVE_INTEGERS_PATTERN = /^[1-9]+[0-9]*$/;
